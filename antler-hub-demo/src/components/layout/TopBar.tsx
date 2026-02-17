@@ -12,7 +12,7 @@ export function TopBar({ title }: { title: string }) {
   }
 
   return (
-    <header className="sticky top-0 z-10 flex h-11 items-center justify-between border-b border-border bg-background px-6">
+    <header className="sticky top-0 z-10 flex items-center justify-between border-b border-border bg-background px-6 py-2">
       <h1 className="text-sm font-medium">{title}</h1>
       <Button variant="outline" size="sm" onClick={toggleTheme} className="gap-2">
         {dark ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}

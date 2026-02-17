@@ -14,18 +14,18 @@ import {
   SlidersHorizontal,
   Settings,
   MoreHorizontal,
+  MessageCircle,
 } from "lucide-react"
 import { Separator } from "@/components/ui/separator"
 
 const navItems = [
   { icon: Home, label: "Home", path: "/" },
-  { icon: Bell, label: "Notifications", path: "#" },
-  { icon: CheckSquare, label: "Tasks", path: "#" },
-  { icon: StickyNote, label: "Notes", path: "#" },
-  { icon: Mail, label: "Emails", path: "#" },
-  { icon: Phone, label: "Calls", path: "#" },
+  { icon: Bell, label: "Leads", path: "#" },
+  { icon: CheckSquare, label: "Applicants", path: "#" },
+  { icon: StickyNote, label: "Founders", path: "#" },
+  { icon: Mail, label: "Deals", path: "#" },
+  { icon: Phone, label: "Portfolio", path: "#" },
   { icon: BarChart3, label: "Reports", path: "#" },
-  { icon: Zap, label: "Automations", path: "#" },
 ]
 
 
@@ -35,12 +35,22 @@ export function Sidebar() {
   return (
     <aside className="flex h-screen w-60 flex-col border-r border-sidebar-border bg-sidebar text-sidebar-foreground">
       {/* Workspace */}
-      <div className="flex h-11 items-center border-b border-sidebar-border px-5">
-        <AntlerLogo className="h-5 text-sidebar-foreground" />
+      <div className="flex h-12 items-center px-5">
+        <AntlerLogo className="h-6 text-sidebar-foreground" />
+      </div>
+
+      {/* Quick Actions */}
+      <div className="px-3 py-3">
+        <button className="flex w-full items-center gap-2 rounded-md border border-sidebar-border px-2 py-1 text-[14px] leading-[20px] font-normal text-sidebar-foreground shadow-[0_1px_2px_rgb(0_0_0/0.06)] transition-colors duration-200 hover:bg-sidebar-accent">
+          <MessageCircle className="h-3.5 w-3.5" />
+          <span className="flex-1 text-left">Chat with AI</span>
+          <kbd className="text-[11px] text-sidebar-foreground/50">⌘K</kbd>
+        </button>
       </div>
 
       {/* Main Nav */}
-      <nav className="mt-3 flex-1 overflow-y-auto px-3">
+      <nav className="flex-1 overflow-y-auto px-3">
+        <p className="mb-1 mt-2 px-2 text-[11px] font-medium tracking-widest text-sidebar-foreground/40">MENU</p>
         <div>
           {navItems.map((item) => {
             const isActive = item.path === "/" ? location.pathname === "/" : location.pathname === item.path
