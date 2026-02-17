@@ -75,7 +75,7 @@ export function HomePage() {
           {/* Line Chart - Label */}
           <Card className="col-span-3 gap-0 py-0">
             <CardHeader className="p-5 pb-2">
-              <CardTitle>Line Chart - Label</CardTitle>
+              <CardTitle>Applications: Korea</CardTitle>
               <CardDescription>January - June 2024</CardDescription>
             </CardHeader>
             <CardContent className="p-5 pt-0">
@@ -120,7 +120,7 @@ export function HomePage() {
           {/* Area Chart - Legend */}
           <Card className="col-span-2 gap-0 py-0">
             <CardHeader className="p-5 pb-2">
-              <CardTitle>Area Chart - Legend</CardTitle>
+              <CardTitle>Portfolio growth</CardTitle>
               <CardDescription>
                 Showing total visitors for the last 6 months
               </CardDescription>

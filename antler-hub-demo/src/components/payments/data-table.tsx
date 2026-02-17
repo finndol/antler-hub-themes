@@ -53,7 +53,7 @@ export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData
 
   return (
     <div className="w-full">
-      <h2 className="mb-4 text-lg font-semibold">Founder applications</h2>
+      <h2 className="mb-4 text-lg font-semibold">Portfolio database</h2>
 
       {/* Table */}
       <div className="rounded-md border bg-card">
