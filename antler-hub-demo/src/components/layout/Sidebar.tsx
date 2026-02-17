@@ -8,7 +8,6 @@ import {
   Mail,
   Phone,
   BarChart3,
-  Zap,
   Layers,
   Info,
   SlidersHorizontal,
@@ -33,9 +32,9 @@ export function Sidebar() {
   const location = useLocation()
 
   return (
-    <aside className="flex h-screen w-60 flex-col border-r border-sidebar-border bg-sidebar text-sidebar-foreground">
+    <aside className="flex h-screen w-[264px] flex-col border-r border-sidebar-border bg-sidebar text-sidebar-foreground">
       {/* Workspace */}
-      <div className="flex h-12 items-center px-5">
+      <div className="flex h-12 items-center px-5 pt-2">
         <AntlerLogo className="h-6 text-sidebar-foreground" />
       </div>
 
@@ -51,14 +50,14 @@ export function Sidebar() {
       {/* Main Nav */}
       <nav className="flex-1 overflow-y-auto px-3">
         <p className="mb-1 mt-2 px-2 text-[11px] font-medium tracking-widest text-sidebar-foreground/40">MENU</p>
-        <div>
+        <div className="space-y-0.5">
           {navItems.map((item) => {
             const isActive = item.path === "/" ? location.pathname === "/" : location.pathname === item.path
             return (
               <Link
                 key={item.label}
                 to={item.path}
-                className={`flex items-center gap-1.5 rounded-md px-2 py-1.5 text-[14px] leading-[20px] font-normal transition-colors duration-200 ${
+                className={`flex items-center gap-1.5 rounded-md px-2 py-1 text-[14px] leading-[20px] font-normal transition-colors duration-200 ${
                   isActive
                     ? "bg-sidebar-accent text-sidebar-accent-foreground"
                     : "text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
@@ -76,7 +75,7 @@ export function Sidebar() {
         {/* Style Guide Nav Link */}
         <Link
           to="/style-guide"
-          className={`flex items-center gap-1.5 rounded-md px-2 py-1.5 text-[14px] leading-[20px] font-normal transition-colors duration-200 ${
+          className={`flex items-center gap-1.5 rounded-md px-2 py-1 text-[14px] leading-[20px] font-normal transition-colors duration-200 ${
             location.pathname === "/style-guide"
               ? "bg-sidebar-accent text-sidebar-accent-foreground"
               : "text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"

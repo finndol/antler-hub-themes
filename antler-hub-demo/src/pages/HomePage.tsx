@@ -2,7 +2,24 @@ import { TopBar } from "@/components/layout/TopBar"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { ChartContainer, ChartLegend, ChartLegendContent, ChartTooltip, ChartTooltipContent, type ChartConfig } from "@/components/ui/chart"
 import { Area, AreaChart, CartesianGrid, LabelList, Line, LineChart, XAxis } from "recharts"
-import { TrendingUp } from "lucide-react"
+import { TrendingUp, Home } from "lucide-react"
+import { DataTable } from "@/components/payments/data-table"
+import { columns, type Payment } from "@/components/payments/columns"
+
+const paymentData: Payment[] = [
+  { id: "p001", name: "Ken Nguyen",        amount: 316,  status: "success",    email: "ken99@yahoo.com",       categories: ["Fintech", "B2B"] },
+  { id: "p002", name: "Abe Fischer",       amount: 242,  status: "success",    email: "abe45@gmail.com",        categories: ["SaaS"] },
+  { id: "p003", name: "Monserrat Diaz",    amount: 837,  status: "processing", email: "monserrat44@gmail.com",  categories: ["Climate", "Deep Tech"] },
+  { id: "p004", name: "Silas Park",        amount: 874,  status: "success",    email: "silas22@gmail.com",      categories: ["Health"] },
+  { id: "p005", name: "Carmella Torres",   amount: 721,  status: "failed",     email: "carmella@hotmail.com",   categories: ["Marketplace", "B2B"] },
+  { id: "p006", name: "John Doe",          amount: 100,  status: "pending",    email: "john.doe@example.com",   categories: ["EdTech"] },
+  { id: "p007", name: "Jane Smith",        amount: 550,  status: "success",    email: "jane.smith@company.com", categories: ["SaaS", "B2B"] },
+  { id: "p008", name: "Bob Wilson",        amount: 199,  status: "processing", email: "bob.wilson@test.org",    categories: ["Deep Tech", "Health"] },
+  { id: "p009", name: "Alice Chen",        amount: 1200, status: "success",    email: "alice@startup.io",       categories: ["Fintech"] },
+  { id: "p010", name: "Charlie Osei",      amount: 75,   status: "failed",     email: "charlie@email.net",      categories: ["Climate"] },
+  { id: "p011", name: "Diana Müller",      amount: 450,  status: "pending",    email: "diana@work.com",         categories: ["EdTech", "Marketplace"] },
+  { id: "p012", name: "Evan Kowalski",     amount: 999,  status: "success",    email: "evan@place.co",          categories: ["SaaS", "Deep Tech"] },
+]
 
 const lineChartData = [
   { month: "January", desktop: 186, mobile: 80 },
@@ -47,7 +64,7 @@ const areaChartConfig = {
 export function HomePage() {
   return (
     <div className="flex flex-col">
-      <TopBar title="Home" />
+      <TopBar title="Home" icon={Home} />
 
       <div className="w-full px-8 py-5">
         {/* Greeting */}
@@ -168,6 +185,11 @@ export function HomePage() {
               </div>
             </CardFooter>
           </Card>
+        </div>
+
+        {/* Payments Table */}
+        <div className="mt-10">
+          <DataTable columns={columns} data={paymentData} />
         </div>
       </div>
     </div>
