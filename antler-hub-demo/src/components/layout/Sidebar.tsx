@@ -104,7 +104,7 @@ export function Sidebar() {
         </div>
 
         {/* Theme Selector */}
-        <p className="mb-1 mt-4 px-2 text-[11px] font-medium tracking-widest text-sidebar-foreground/40">THEME</p>
+        <p className="mb-1 mt-4 px-2 text-[11px] font-medium tracking-widest text-sidebar-foreground/40">ACTIVATE THEME</p>
         <Select value={colorTheme} onValueChange={(v) => setColorTheme(v as "default" | "antler-v1")}>
           <SelectTrigger className="h-8 w-full text-[14px] bg-sidebar border-sidebar-foreground/20 text-sidebar-foreground">
             <span className="flex items-center gap-1.5">
