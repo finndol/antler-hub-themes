@@ -14,16 +14,6 @@ import {
 
 export type Category = "Fintech" | "SaaS" | "Climate" | "Health" | "EdTech" | "B2B" | "Marketplace" | "Deep Tech"
 
-const categoryStyles: Record<Category, string> = {
-  Fintech:     "bg-blue-100 text-blue-700",
-  SaaS:        "bg-purple-100 text-purple-700",
-  Climate:     "bg-green-100 text-green-700",
-  Health:      "bg-rose-100 text-rose-700",
-  EdTech:      "bg-amber-100 text-amber-700",
-  B2B:         "bg-orange-100 text-orange-700",
-  Marketplace: "bg-cyan-100 text-cyan-700",
-  "Deep Tech": "bg-indigo-100 text-indigo-700",
-}
 
 export type Payment = {
   id: string
@@ -93,7 +83,7 @@ export const columns: ColumnDef<Payment>[] = [
           {cats.map((cat) => (
             <Badge
               key={cat}
-              className={`${categoryStyles[cat]} rounded-md border-transparent px-1.5 py-px text-sm font-medium`}
+              className="bg-primary text-primary-foreground rounded-md border-transparent px-1.5 py-px text-sm font-normal"
             >
               {cat}
             </Badge>

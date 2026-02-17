@@ -1,8 +1,8 @@
 import { TopBar } from "@/components/layout/TopBar"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ChartContainer, ChartLegend, ChartLegendContent, ChartTooltip, ChartTooltipContent, type ChartConfig } from "@/components/ui/chart"
 import { Area, AreaChart, CartesianGrid, LabelList, Line, LineChart, XAxis } from "recharts"
-import { TrendingUp, Home } from "lucide-react"
+import { Home } from "lucide-react"
 import { DataTable } from "@/components/payments/data-table"
 import { columns, type Payment } from "@/components/payments/columns"
 
@@ -115,14 +115,6 @@ export function HomePage() {
                 </LineChart>
               </ChartContainer>
             </CardContent>
-            <CardFooter className="flex-col items-start gap-2 p-5 pt-0 text-sm">
-              <div className="flex gap-2 leading-none font-medium">
-                Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
-              </div>
-              <div className="leading-none text-muted-foreground">
-                Showing total visitors for the last 6 months
-              </div>
-            </CardFooter>
           </Card>
 
           {/* Area Chart - Legend */}
@@ -172,18 +164,6 @@ export function HomePage() {
                 </AreaChart>
               </ChartContainer>
             </CardContent>
-            <CardFooter className="p-5 pt-0">
-              <div className="flex w-full items-start gap-2 text-sm">
-                <div className="grid gap-2">
-                  <div className="flex items-center gap-2 leading-none font-medium">
-                    Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
-                  </div>
-                  <div className="flex items-center gap-2 leading-none text-muted-foreground">
-                    January - June 2024
-                  </div>
-                </div>
-              </div>
-            </CardFooter>
           </Card>
         </div>
 

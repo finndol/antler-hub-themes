@@ -132,6 +132,80 @@ body {
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+/* --- Antler v1 theme (light) --- */
+/* Pearl Bush warm neutrals + Deep Teal primary */
+[data-theme="antler-v1"] {
+  --brand: hsl(0 82% 60%);
+  --radius: 0.5rem;
+  --background: hsl(30 20% 97%);
+  --foreground: hsl(0 4% 11%);
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(0 4% 11%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(0 4% 11%);
+  --primary: hsl(186 53% 34%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(25 20% 92%);
+  --secondary-foreground: hsl(0 4% 22%);
+  --muted: hsl(25 20% 92%);
+  --muted-foreground: hsl(0 4% 11%);
+  --accent: hsl(25 20% 92%);
+  --accent-foreground: hsl(0 4% 22%);
+  --destructive: hsl(0 72% 51%);
+  --border: hsl(22 20% 85%);
+  --input: hsl(22 20% 85%);
+  --ring: hsl(186 53% 34%);
+  --chart-1: hsl(213 100% 49%);
+  --chart-2: hsl(209 86% 88%);
+  --chart-3: hsl(25 20% 72%);
+  --chart-4: hsl(182 48% 42%);
+  --chart-5: hsl(10 16% 28%);
+  --sidebar: hsl(30 20% 93%);
+  --sidebar-foreground: hsl(0 4% 11%);
+  --sidebar-primary: hsl(186 53% 34%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(25 20% 87%);
+  --sidebar-accent-foreground: hsl(0 4% 22%);
+  --sidebar-border: hsl(22 20% 85%);
+  --sidebar-ring: hsl(186 53% 34%);
+}
+
+/* --- Antler v1 theme (dark) --- */
+/* Deep Teal darks + cool-tinted neutrals */
+[data-theme="antler-v1"].dark {
+  --background: hsl(187 52% 9%);
+  --foreground: hsl(180 15% 90%);
+  --card: hsl(187 46% 12%);
+  --card-foreground: hsl(180 15% 90%);
+  --popover: hsl(187 42% 14%);
+  --popover-foreground: hsl(180 15% 90%);
+  --primary: hsl(182 48% 62%);
+  --primary-foreground: hsl(187 52% 9%);
+  --secondary: hsl(187 38% 17%);
+  --secondary-foreground: hsl(180 20% 78%);
+  --muted: hsl(187 38% 17%);
+  --muted-foreground: hsl(185 20% 52%);
+  --accent: hsl(187 38% 17%);
+  --accent-foreground: hsl(180 20% 78%);
+  --destructive: hsl(0 65% 48%);
+  --border: hsl(186 34% 22%);
+  --input: hsl(186 34% 22%);
+  --ring: hsl(182 48% 62%);
+  --chart-1: hsl(213 100% 49%);
+  --chart-2: hsl(185 20% 52%);
+  --chart-3: hsl(180 20% 78%);
+  --chart-4: hsl(182 48% 42%);
+  --chart-5: hsl(186 34% 32%);
+  --sidebar: hsl(187 55% 7%);
+  --sidebar-foreground: hsl(180 15% 90%);
+  --sidebar-primary: hsl(182 48% 62%);
+  --sidebar-primary-foreground: hsl(187 52% 9%);
+  --sidebar-accent: hsl(187 38% 17%);
+  --sidebar-accent-foreground: hsl(180 20% 78%);
+  --sidebar-border: hsl(186 34% 22%);
+  --sidebar-ring: hsl(182 48% 62%);
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

@@ -56,13 +56,13 @@ export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData
       <h2 className="mb-4 text-lg font-semibold">Founder applications</h2>
 
       {/* Table */}
-      <div className="rounded-md border">
+      <div className="rounded-md border bg-card">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => (
-                  <TableHead key={header.id} className={`h-8${header.column.id === "name" ? " pl-0" : ""}`}>
+                  <TableHead key={header.id} className={`h-8${header.column.id === "name" ? " pl-3" : ""}${header.column.id === "select" ? " w-px" : ""}`}>
                     {header.isPlaceholder
                       ? null
                       : flexRender(header.column.columnDef.header, header.getContext())}
@@ -76,7 +76,7 @@ export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData
               table.getRowModel().rows.map((row) => (
                 <TableRow key={row.id} data-state={row.getIsSelected() && "selected"}>
                   {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id} className={`py-1.5${cell.column.id === "name" ? " pl-0" : ""}`}>
+                    <TableCell key={cell.id} className={`py-1.5${cell.column.id === "name" ? " pl-3" : ""}${cell.column.id === "select" ? " w-px" : ""}`}>
                       {flexRender(cell.column.columnDef.cell, cell.getContext())}
                     </TableCell>
                   ))}

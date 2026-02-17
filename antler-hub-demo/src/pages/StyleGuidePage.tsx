@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { TopBar } from "@/components/layout/TopBar"
+import { useTheme } from "@/contexts/ThemeContext"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -25,7 +26,7 @@ import { Switch } from "@/components/ui/switch"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Separator } from "@/components/ui/separator"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
-import { Moon, Sun, Bold, Italic, AlertCircle, Terminal } from "lucide-react"
+import { Bold, Italic, AlertCircle, Terminal } from "lucide-react"
 
 const colorGroups = [
   {
@@ -181,18 +182,22 @@ function SidebarMiniPreview() {
   )
 }
 
-export function StyleGuidePage() {
-  const [dark, setDark] = useState(document.documentElement.classList.contains("dark"))
+export function StyleGuidePage({ forceTheme }: { forceTheme?: string }) {
+  const { colorTheme, setColorTheme } = useTheme()
+  const prevThemeRef = useRef(colorTheme)
 
-  const toggleTheme = () => {
-    const next = !dark
-    setDark(next)
-    document.documentElement.classList.toggle("dark", next)
-  }
+  useEffect(() => {
+    if (!forceTheme) return
+    prevThemeRef.current = colorTheme
+    setColorTheme(forceTheme as "default" | "antler-v1")
+    return () => setColorTheme(prevThemeRef.current)
+  }, [forceTheme])
+
+  const themeName = forceTheme === "antler-v1" ? "Antler v1" : "Default"
 
   return (
     <div className="flex flex-col">
-      <TopBar title="Style Guide" />
+      <TopBar title={`Style Guide — ${themeName}`} />
 
       <div className="mx-auto w-full max-w-5xl px-8 py-10">
         {/* Header */}
@@ -200,13 +205,9 @@ export function StyleGuidePage() {
           <div>
             <h2 className="text-3xl font-semibold tracking-tight">Antler HUB — Component Library</h2>
             <p className="mt-1 text-muted-foreground">
-              Default shadcn/ui components — baseline before theming
+              {themeName} theme — shadcn/ui components
             </p>
           </div>
-          <Button variant="outline" size="sm" onClick={toggleTheme} className="gap-2">
-            {dark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-            {dark ? "Light" : "Dark"}
-          </Button>
         </div>
 
         <Separator className="my-8" />
